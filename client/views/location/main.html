@@ -1,0 +1,18 @@
+<div ng-include src="'/app/partials/common/header.html'"></div>
+<div ng-include src="'/app/views/location/nav.html'"></div>
+<!--Species info view -->
+<div id="location-container" class="location-container">
+  <div mol-location-map class="mol-location-map"
+    location="location"></div>
+  <div resizable
+    r-flex="true"
+    r-directions="['left']"
+    class="drawer"
+    ng-show="location.lat">
+    <mol-loading-indicator
+      style="float: center"></mol-loading-indicator>
+    <mol-taxa-counts class="column" location="location" taxon="taxon"></mol-taxa-counts>
+    <mol-species-list class="column" ng-show="taxon" taxon="taxon" species="species"></mol-species-list>
+    <mol-species-detail class="column" ng-show="species" species="species"></mol-species-detail>
+  </div>
+</div><div class="hidden-xs" ng-include="'/app/partials/common/thin-footer.html'"></div>

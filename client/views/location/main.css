@@ -1,0 +1,57 @@
+
+.mol-view-container {
+  position: absolute;
+  top: 0; left:0; right:0; bottom: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.location-container {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.location-container .angular-leaflet-map {
+  flex: 1;
+}
+
+.location-container .mol-location-map {
+  display: flex;
+  flex: 1 1;
+}
+
+.location-container .drawer  {
+  border-left: 2pt solid gray;
+  display: flex;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.location-container .drawer .column {
+  min-height: -webkit-min-content;
+  flex: 0 0 auto;
+  flex-direction: row;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 15px;
+}
+
+.location-container footer {
+  /*flex: 0 1 40px;*/
+}
+
+.location-container .panel-body-table  {
+  overflow-y: scroll;
+  max-height: 70vh;
+}
+.location-container .desc  {
+  max-height: 460px;
+  overflow-y: scroll;
+}
+.location-container mol-loading-indicator {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+}

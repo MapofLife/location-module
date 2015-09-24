@@ -1,0 +1,30 @@
+<header>
+    <figure class="logo">
+        <a href="http://www.mol.org">
+            <img src="/app/img/logo.png" alt="Map of Life" /></a>
+    </figure>
+    <mol-auth class="mol-auth" user="user"></mol-auth>
+    <nav class="main_navigation hidden-xxs">
+        <ul class="menu">
+            <li class="tab">
+                <a ui-sref="species.overview({scientficname:species.scientificname})"
+                   ui-sref-active="selected">
+                  <i class="fa fa-info"></i>Species</a>
+            </li>
+            <li class="tab">
+                <a ui-sref="location"
+                    ui-sref-active="selected">
+                        <i class="fa fa-list-ol icon"></i>Locations</a>
+            </li>
+            <li class="hidden-xs">
+                <a href="https://auth.mol.org/mobile">Mobile</a>
+            </li>
+            <li class="hidden-xs">
+                <a href="https://www.mol.org/about">About MOL</a>
+            </li>
+            <li class="hidden-xs">
+                <a href="https://www.mol.org/news">News</a>
+            </li>
+        </ul>
+    </nav>
+</header>

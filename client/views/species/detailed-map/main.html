@@ -1,0 +1,32 @@
+<div ng-include="'/app/partials/common/header.html'"></div>
+<div ng-include="'/app/views/species/nav.html'"></div>
+<div class="detail_view container-fluid">
+  <div class="row">
+    <div class="col-md-4"  ng-class="{
+      map_sidebar_collapsed: !toggles.sidebarVisible,
+      detail_map_layer_sidebar: toggles.sidebarVisible}"
+       ng-include="'/app/partials/detail_map_layer_sidebar.html'"></div>
+    <div class="col-md-8">
+      <leaflet
+        class="detail_map detail_map_xs detail_map_lg"
+        layers="map.layers"
+        bounds="map.bounds"
+        center="map.center"
+        markers="map.markers"
+        controls="map.controls"
+        defaults="map.options"
+        legend="map.legend"
+        ></leaflet>
+        <button rel="tooltip" title=""  ng-click="updateMap();"
+          ng-class="{stale: stale}"
+          class="btn btn-default detail_map_update"
+          tooltip="Update map with the selected changes."
+          tooltip-placement="right">
+          Update map
+        </button>
+        <!--<div ng-include="'/app/partials/detail_map_legend.html'"></div>-->
+      <mol-loading-indicator style="position:absolute;top:5px;left:50%"></mol-loading-indicator>
+    </div>
+  </div>
+</div>
+<div class="hidden-xs" ng-include="'/app/partials/common/thin-footer.html'"></div>
