@@ -17,22 +17,17 @@ PROD = False
 
 class BaseHandler(webapp2.RequestHandler):
     def render_template(self, f, template_args):
-        path = os.path.join(os.path.dirname(__file__), "server/templates/html", f)
+        path = os.path.join(os.path.dirname(__file__), "../templates/html", f)
         logging.info(path)
 
         template_args['debug']=(self.request.get('debug','false')=='true')
         self.response.out.write(template.render(path, template_args))
 
-    def push_html(self, f):
-        path = os.path.join(os.path.dirname(__file__), "server/templates/html", f)
-        logging.info(path)
-        self.response.out.write(open(path, 'r').read())
-
 class App(BaseHandler):
     def get(self):
         self.render_template('index.html',{"prod":PROD,'rand':''})
     def post(self):
-        self.render_template('index.html')
+        self.render_template('index.html',{"prod":PROD,'rand':''})
 
 application = webapp2.WSGIApplication(
          [

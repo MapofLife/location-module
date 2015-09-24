@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="mol">
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,73 +22,72 @@
 {% if prod and not debug %}
     <script src="/client/app.min.js?{{rand}}"></script>
 {% else %}
-  <script src="/client/js/app.min.css.js?{{rand}}"></script>
-  <!--third party libs-->
-  <script src="/client/components/jquery/dist/jquery.js?{{rand}}"></script>
-  <script src="/client/components/angular/angular.js?{{rand}}"></script>
-  <script src="/client/components/angular-resource/angular-resource.js?{{rand}}"></script>
-  <script src="/client/components/angular-sanitize/angular-sanitize.js?{{rand}}"></script>
-  <script src="/client/components/angular-cookies/angular-cookies.js?{{rand}}"></script>
-  <script src="/client/components/angular-bootstrap/ui-bootstrap-tpls.js?{{rand}}"></script>
-  <script src="/client/components/angular-ui-select/dist/select.js?{{rand}}"></script>
-  <script src="/client/components/angular-ui-router/release/angular-ui-router.js?{{rand}}"></script>
-  <script src="/client/components/angular-resizable/angular-resizable.min.js?{{rand}}"></script>
-  <script src="/client/components/angular-rangeslider/angular.rangeSlider.js?{{rand}}"></script>
-  <script src="/client/components/angular-loading-bar/build/loading-bar.js?{{rand}}"></script>
-  <script src="/client/components/lodash/lodash.js?{{rand}}"></script>
-  <script src="/client/components/leaflet/dist/leaflet.js?{{rand}}"></script>
-  <script src="/client/components/Leaflet.utfgrid/dist/leaflet.utfgrid.js?{{rand}}"></script>
-  <script src="/client/components/leaflet.loading/src/Control.Loading.js?{{rand}}"></script>
-  <script src="/client/components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js?{{rand}}"></script>
-  <script src="/client/components/angular-simple-logger/dist/angular-simple-logger.js?{{rand}}"></script>
-  <script src="/client/components/angular-leaflet-directive/dist/angular-leaflet-directive.js?{{rand}}"></script>
-  <script src="/client/components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js?{{rand}}"></script>
-  <script src="/client/components/ng-pageslide/dist/angular-pageslide-directive.js?{{rand}}"></script>
-  <!--mol components-->
-  <script src="/client/components/mol/species-search/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/species-search/component.js?{{rand}}"></script>
+    <script src="/client/js/app.min.css.js?{{rand}}"></script>
+    <!--third party libs-->
+    <script src="/client/components/jquery/dist/jquery.js?{{rand}}"></script>
+    <script src="/client/components/angular/angular.js?{{rand}}"></script>
+    <script src="/client/components/angular-resource/angular-resource.js?{{rand}}"></script>
+    <script src="/client/components/angular-sanitize/angular-sanitize.js?{{rand}}"></script>
+    <script src="/client/components/angular-cookies/angular-cookies.js?{{rand}}"></script>
+    <script src="/client/components/angular-bootstrap/ui-bootstrap-tpls.js?{{rand}}"></script>
+    <script src="/client/components/angular-ui-select/dist/select.js?{{rand}}"></script>
+    <script src="/client/components/angular-ui-router/release/angular-ui-router.js?{{rand}}"></script>
+    <script src="/client/components/angular-resizable/angular-resizable.min.js?{{rand}}"></script>
+    <script src="/client/components/angular-rangeslider/angular.rangeSlider.js?{{rand}}"></script>
+    <script src="/client/components/angular-loading-bar/build/loading-bar.js?{{rand}}"></script>
+    <script src="/client/components/lodash/lodash.js?{{rand}}"></script>
+    <script src="/client/components/leaflet/dist/leaflet.js?{{rand}}"></script>
+    <script src="/client/components/Leaflet.utfgrid/dist/leaflet.utfgrid.js?{{rand}}"></script>
+    <script src="/client/components/leaflet.loading/src/Control.Loading.js?{{rand}}"></script>
+    <script src="/client/components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js?{{rand}}"></script>
+    <script src="/client/components/angular-simple-logger/dist/angular-simple-logger.js?{{rand}}"></script>
+    <script src="/client/components/angular-leaflet-directive/dist/angular-leaflet-directive.js?{{rand}}"></script>
+    <script src="/client/components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js?{{rand}}"></script>
+    <script src="/client/components/ng-pageslide/dist/angular-pageslide-directive.js?{{rand}}"></script>
+    <!--mol components-->
+    <script src="/client/components/mol/species-search/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-search/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/species-list/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/species-list/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-list/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-list/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/species-detail/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/species-detail/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-detail/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-detail/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/species-images/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/species-images/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-images/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-images/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/point-filters/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/point-filters/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/point-filters/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/point-filters/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/species-wiki/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/species-wiki/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-wiki/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/species-wiki/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/loading-indicator/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/loading-indicator/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/loading-indicator/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/loading-indicator/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/location-map/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/location-map/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/location-map/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/location-map/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/consensus-map/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/consensus-map/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/consensus-map/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/consensus-map/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/taxa-counts/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/taxa-counts/component.js?{{rand}}"></script>
+    <script src="/client/components/mol/taxa-counts/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/taxa-counts/component.js?{{rand}}"></script>
 
-  <script src="/client/components/mol/auth/templates.js?{{rand}}"></script>
-  <script src="/client/components/mol/auth/component.js?{{rand}}"></script>
-  <!--mol app files-->
-  <script src="/client/js/helpers.js?{{rand}}"></script>
-  <script src="/client/js/app.js?{{rand}}"></script>
-  <script src="/client/js/services.js?{{rand}}"></script>
-  <!--<script src="/client/views/species/controller.js?{{rand}}"></script>
-  <script src="/client/views/species/detailed-map/controller.js?{{rand}}"></script>
-  <script src="/client/views/species/habitat-distribution/controller.js?{{rand}}"></script>
-  <script src="/client/views/species/habitat-change/controller.js?{{rand}}"></script>
-  <script src="/client/views/species/reserve-coverage/controller.js?{{rand}}"></script>
-  <script src="/client/views/species/species-in-reserves/controller.js?{{rand}}"></script-->
-
-  <script src="/client/js/filters.js?{{rand}}"></script>
+    <script src="/client/components/mol/auth/templates.js?{{rand}}"></script>
+    <script src="/client/components/mol/auth/component.js?{{rand}}"></script>
+    <!--mol app files-->
+    <script src="/client/js/helpers.js?{{rand}}"></script>
+    <script src="/client/js/app.js?{{rand}}"></script>
+    <script src="/client/js/services.js?{{rand}}"></script>
+    <!--<script src="/client/views/species/controller.js?{{rand}}"></script>
+    <script src="/client/views/species/detailed-map/controller.js?{{rand}}"></script>
+    <script src="/client/views/species/habitat-distribution/controller.js?{{rand}}"></script>
+    <script src="/client/views/species/habitat-change/controller.js?{{rand}}"></script>
+    <script src="/client/views/species/reserve-coverage/controller.js?{{rand}}"></script>
+    <script src="/client/views/species/species-in-reserves/controller.js?{{rand}}"></script-->
+    <script src="/client/js/filters.js?{{rand}}"></script>
 {% endif %}
 </body>
 </html>
