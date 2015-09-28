@@ -1,6 +1,7 @@
 //'use strict';
 
 angular.module('mol', [
+  //mol components
   'mol.filters',
   'mol.services',
   'mol.auth',
@@ -16,7 +17,7 @@ angular.module('mol', [
   'mol.loading-indicator',
   'mol.consensus-map',
   'mol.region-selector',
-  //3rd party
+  //3rd party components
   'ui.bootstrap',
   'ui.select',
   'ui.router',
@@ -37,10 +38,10 @@ angular.module('mol', [
     cfpLoadingBarProvider.latencyThreshold = 500;
   }])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-
   //send cookies
   $httpProvider.defaults.withCredentials = true;
 
+  //configure routes
   $urlRouterProvider.otherwise("/location");
 
   $stateProvider
@@ -66,9 +67,6 @@ angular.module('mol', [
         url: '/{placename}/:taxa'
       }
     );
-
     //Gets rid of the # in the querystring. Wont work on IE
     $locationProvider.html5Mode(true);
-
-
 });
