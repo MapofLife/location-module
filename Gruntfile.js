@@ -29,7 +29,7 @@ module.exports = function(grunt) {
             "client/components/jquery/dist/jquery.min.js",
             "client/components/angular/angular.min.js",
             "client/components/angular-resource/angular-resource.min.js",
-            "client/components/angular-sanitize/angular-sanitize.min.js",
+            //"client/components/angular-sanitize/angular-sanitize.min.js",
             "client/components/angular-cookies/angular-cookies.min.js",
             "client/components/angular-bootstrap/ui-bootstrap-tpls.min.js",
             "client/components/angular-ui-select/dist/select.min.js",
@@ -45,9 +45,10 @@ module.exports = function(grunt) {
             "client/components/Leaflet.utfgrid/dist/leaflet.utfgrid.js",
             "client/components/leaflet.loading/src/Control.Loading.js",
             "client/components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js",
-            "client/components/angular-leaflet-directive/dist/angular-leaflet-directive.js",
-            "client/components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js",
-            "client/components/ng-pageslide/dist/angular-pageslide-directive.min.js",
+            "client/components/angular-simple-logger/dist/angular-simple-logger.light.min.js",
+            "client/components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js",
+            //"client/components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js",
+            //"client/components/ng-pageslide/dist/angular-pageslide-directive.min.js",
             //mol components
             "client/components/mol/species-search/component.min.js",
             "client/components/mol/species-list/component.min.js",
@@ -59,23 +60,13 @@ module.exports = function(grunt) {
             "client/components/mol/location-map/component.min.js",
             "client/components/mol/consensus-map/component.min.js",
             "client/components/mol/taxa-counts/component.min.js",
+            "client/components/mol/region-selector/component.min.js",
             "client/components/mol/auth/component.min.js",
             //mol app files
             "client/js/helpers.js",
-            "client/js/app.js",
             "client/js/services.js",
-
-            //mol views
-            "client/views/species/controller.js",
-            "client/views/species/detail-map/controller.js",
-            "client/views/species/overview/controller.js",
-            "client/views/species/reserve-coverage/controller.js",
-            "client/views/species/habitat-change/controller.js",
-            "client/views/species/habitat-distribution/controller.js",
-            "client/views/species/species-in-reserves/controller.js",
-
-            "client/js/learnmore_controller.js",
             "client/js/filters.js",
+            "client/js/app.js"
           ]
         }
       }
@@ -84,14 +75,14 @@ module.exports = function(grunt) {
       options: {
         report: 'gzip',
         rebase: true,
-        root: 'client',
+        root: './',
         keepSpecialComments: 0
       },
       combine : {
         files: {
           "client/css/app.min.css": [
             //"client/components/font-awesome/font-awesome.min.css",
-            "client/components/sortable/css/sortable-theme-bootstrap.css",
+            //"client/components/sortable/css/sortable-theme-bootstrap.css",
             "client/components/bootstrap/dist/css/bootstrap.min.css",
             "client/components/angular-ui-select/dist/select.css",
             "client/components/angular-rangeslider/angular.rangeSlider.css",

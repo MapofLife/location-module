@@ -5,7 +5,7 @@
   "homepage": "https://github.com/MapofLife/ng-mol",
   "license": "MIT",
   "dependencies": {
-    "mol": "https://github.com/MapofLife/ui-components.git",
+    "mol-ui-components": "https://github.com/MapofLife/ui-components.git",
     "Leaflet.awesome-markers": "~2.0.2",
     "angular-bootstrap-checkbox": "~0.3.1",
     "Leaflet.utfgrid": "danzel/Leaflet.utfgrid",

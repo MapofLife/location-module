@@ -13,13 +13,13 @@ if 'SERVER_SOFTWARE' in os.environ:
 else:
    PROD = True
 
-#PROD = False
 
 class BaseHandler(webapp2.RequestHandler):
     def render_template(self, f, template_args):
         path = os.path.join(os.path.dirname(__file__), "../templates/html", f)
         logging.info(path)
-
+        if self.request.get('prod','false')=='true':
+            template_args['prod']=True
         template_args['debug']=(self.request.get('debug','false')=='true')
         self.response.out.write(template.render(path, template_args))
 
