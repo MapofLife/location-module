@@ -21,7 +21,7 @@ angular.module('mol', [
   'ui.bootstrap',
   'ui.select',
   'ui.router',
-  'ui.checkbox',
+  //'ui.checkbox',
   'imageHelpers',
   'leaflet-directive',
   'angularResizable',
@@ -29,7 +29,7 @@ angular.module('mol', [
   'angular-loading-bar',
   'percentage',
   'km2',
-  'ngSanitize',
+  //'ngSanitize',
   'ngCookies'
 ])
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {

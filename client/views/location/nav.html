@@ -15,11 +15,13 @@
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse visible-xs" id="bs-example-navbar-collapse-1" collapse="!isCollapsed">
            <ul class="nav navbar-nav">
-              <li><a mol-region-selector>Select a region</a></li>
+              <li><a mol-region-selector>Select by region</a></li>
+              <li><a mol-region-selector></a></li>
+
            </ul>
            <ul class="nav navbar-nav visible-xxxs visible-xxs">
                <li>
-                   <a ui-sref="location">
+                   <a ng-href="http://species.mol.org/species/{{species.scientificname}}">
                       <i class="fa fa-info"></i>Species</a>
                </li>
                <li>
