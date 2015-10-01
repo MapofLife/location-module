@@ -12,7 +12,7 @@ angular.module('mol', [
   'mol.species-detail',
   'mol.consensus-map',
   'mol.point-filters',
-  'mol.taxa-service',
+  //'mol.species-list-service',
   'mol.taxa-counts',
   'mol.location-map',
   'mol.loading-indicator',

@@ -3,15 +3,15 @@
 <!--Species info view -->
 <div id="location-container" class="location-container">
   <div mol-location-map class="mol-location-map"
-    location="location"></div>
+    location="region"></div>
   <div resizable
     r-flex="true"
     r-directions="['left']"
     class="drawer"
-    ng-show="location.lat">
+    ng-show="region">
     <mol-loading-indicator
       style="float: center"></mol-loading-indicator>
-    <mol-taxa-counts class="column" location="location" taxon="taxon"></mol-taxa-counts>
+    <mol-taxa-counts class="column" region="region" taxon="taxon"></mol-taxa-counts>
     <mol-species-list class="column" ng-show="taxon" taxon="taxon" species="species"></mol-species-list>
     <mol-species-detail class="column" ng-show="species" species="species"></mol-species-detail>
   </div>
