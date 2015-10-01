@@ -12,6 +12,7 @@ angular.module('mol.region-model-ctrl',[])
 
       $scope.$watch('model.region',function(newValue,oldValue){
          if(newValue) {
+            $scope.model.taxa = undefined;
             MOLSpeciesList.searchRegion(newValue).then(
                function(result) {
                   $scope.model.taxa = result.data;
