@@ -2,16 +2,16 @@
 <div ng-include src="'/app/views/location/nav.html'"></div>
 <!--Species info view -->
 <div id="location-container" class="location-container">
-  <div mol-location-map class="mol-location-map" region="region"></div>
+  <div mol-location-map class="mol-location-map" region="model.region"></div>
   <div resizable
     r-flex="true"
     r-directions="['left']"
     class="drawer"
-    ng-show="region">
+    ng-show="model.region">
     <mol-loading-indicator
       style="float: center"></mol-loading-indicator>
-    <mol-taxa-counts class="column" ng-show="taxa" taxa="taxa" taxon="taxon"></mol-taxa-counts>
-    <mol-species-list class="column" ng-show="taxon" taxon="taxon" species="species"></mol-species-list>
-    <mol-species-detail class="column" ng-show="species" species="species"></mol-species-detail>
+    <mol-taxa-counts class="column" ng-show="model.taxa" taxa="model.taxa" taxon="model.taxon"></mol-taxa-counts>
+    <mol-species-list class="column" ng-show="model.taxon" taxon="model.taxon" species="model.species"></mol-species-list>
+    <mol-species-detail class="column" ng-show="model.species" species="model.species"></mol-species-detail>
   </div>
 </div><div class="hidden-xs" ng-include="'/app/partials/common/thin-footer.html'"></div>
