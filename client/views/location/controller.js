@@ -14,7 +14,7 @@ angular.module('mol.region-model-ctrl',[])
          if(newValue) {
             MOLSpeciesList.searchRegion(newValue).then(
                function(result) {
-                  $scope.taxa = result.data;
+                  $scope.model.taxa = result.data;
                }
             );
           }
