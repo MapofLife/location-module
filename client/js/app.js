@@ -12,12 +12,13 @@ angular.module('mol', [
   'mol.species-detail',
   'mol.consensus-map',
   'mol.point-filters',
-  //'mol.species-list-service',
+  'mol.species-list-service',
   'mol.taxa-counts',
   'mol.location-map',
   'mol.loading-indicator',
   'mol.consensus-map',
   'mol.region-selector',
+  'mol.region-model-ctrl',
   //3rd party components
   'ui.bootstrap',
   'ui.select',
@@ -50,6 +51,7 @@ angular.module('mol', [
       'location',
       {
         templateUrl: 'app/views/location/main.html',
+        controller: 'molRegionModelCtrl',
         url: '/location',
 
       }
