@@ -2,6 +2,7 @@
 .mol-view-container {
   position: absolute;
   top: 0; left:0; right:0; bottom: 0;
+  display: -webkit-flex;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -9,6 +10,7 @@
 
 .location-container {
   flex: 1 1 auto;
+  display: -webkit-flex;
   display: flex;
 }
 
@@ -17,15 +19,16 @@
 }
 
 .location-container .mol-location-map {
+  display: -webkit-flex;
   display: flex;
   flex: 1 1;
 }
 
 .location-container .drawer  {
   border-left: 2pt solid gray;
+  display: -webkit-flex;
   display: flex;
   flex: 0 1 auto;
-  display: flex;
   flex-direction: row;
 }
 
@@ -36,6 +39,20 @@
   min-width: 300px;
   max-width: 500px;
   padding: 15px;
+}
+
+.location-container .drawer .row {
+  min-height: -webkit-min-content;
+  flex: 0 0 auto;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 15px;
+}
+
+.location-container .drawer .container {
+  display: -webkit-flex;
+  display: flex;
 }
 
 .location-container footer {

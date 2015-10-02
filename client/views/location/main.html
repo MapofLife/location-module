@@ -4,17 +4,43 @@
 <div id="location-container" class="location-container">
   <div mol-location-map class="mol-location-map"
     region="model.region"></div>
-  <div resizable
+  <div
+    resizable
     r-flex="true"
     r-directions="['left']"
     class="drawer"
     ng-show="model.region">
-    <mol-loading-indicator
-      style="float: center"></mol-loading-indicator>
-    <mol-taxa-counts class="column"
-      taxa="model.taxa"
-      taxon="model.taxon"></mol-taxa-counts>
-    <mol-species-list class="column" ng-show="model.taxon" taxon="model.taxon" species="model.species"></mol-species-list>
-    <mol-species-detail class="column" ng-show="model.species" species="model.species"></mol-species-detail>
+      <div class="column">
+        <div>
+          <div class="column">
+            Species found within the {{model.region.name}} {{model.region.type.replace('_',' ')}}.
+          </div>
+          <div class="column">
+            Filter by species expected between {{model.constraints.elev.min | number}}  and
+            {{model.constraints.elev.max | number}} meters
+            <div class="elev" range-slider show-values="false"
+                step="100" min="0" max="8500"
+                prevent-equal-min-max
+                model-min="model.constraints.elev.min"
+                model-max="model.constraints.elev.max"></div>
+          </div>
+        </div>
+        <div class="container">
+          <mol-loading-indicator
+            message="model.loadingMessage"
+            style="float: center"></mol-loading-indicator>
+          <mol-taxa-counts class="column"
+            taxa="model.taxa"
+            filter-by="model.constraints"
+            taxon="model.taxon"></mol-taxa-counts>
+          <mol-species-list class="column"
+            taxon="model.taxon"
+            filter-by="model.constraints"
+            species="model.species"></mol-species-list>
+          <mol-species-detail class="column"
+            filter-by="model.constraints"
+            species="model.species"></mol-species-detail>
+        </div>
+      </div>
   </div>
 </div><div class="hidden-xs" ng-include="'/app/partials/common/thin-footer.html'"></div>

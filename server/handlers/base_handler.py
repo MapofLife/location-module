@@ -13,6 +13,8 @@ if 'SERVER_SOFTWARE' in os.environ:
 else:
    PROD = True
 
+PROD = False
+
 
 class BaseHandler(webapp2.RequestHandler):
     def render_template(self, f, template_args):
