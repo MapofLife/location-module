@@ -1,8 +1,8 @@
 angular.module('mol.region-model-ctrl',[])
   .controller('molRegionModelCtrl',[
-    '$scope','$filter','MOLSpeciesList',
+    '$scope','$state','$filter','MOLSpeciesList',
 
-    function($scope,$filter, MOLSpeciesList) {
+    function($scope,$state,$filter, MOLSpeciesList) {
       $scope.model = {constraints : {"elev" : {min:-500,max:8500}}};
 
       /*$scope.$watch('model.constraints',function(newValue,oldValue){
