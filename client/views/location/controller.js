@@ -11,6 +11,11 @@ angular.module('mol.region-model-ctrl',[])
           }
       },true)*/
 
+        $scope.reset = function() {
+            $scope.model.region = {};
+            $state.transitionTo('location');
+        };
+
       $scope.$watch('model.region',function(newValue,oldValue){
          if(newValue) {
 
