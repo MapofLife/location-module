@@ -2,9 +2,9 @@
 
 footer ul.menu{border:0;list-style:none;text-align:left}
 footer ul.menu li{margin:0 0 0 .5em}
-footer ul li.expanded{list-style-image:url(https://mol.org/misc/menu-expanded.png);list-style-type:circle}
-footer ul li.collapsed{list-style-image:url(https://mol.org/misc/menu-collapsed.png);list-style-type:disc}
-footer ul li.leaf{list-style-image:url(https://mol.org/misc/menu-leaf.png);list-style-type:square}
+footer ul li.expanded{list-style-image:url(http://mol.org/misc/menu-expanded.png);list-style-type:circle}
+footer ul li.collapsed{list-style-image:url(http://mol.org/misc/menu-collapsed.png);list-style-type:disc}
+footer ul li.leaf{list-style-image:url(http://mol.org/misc/menu-leaf.png);list-style-type:square}
 li.expanded,li.collapsed,li.leaf{padding:.2em .5em 0 0;margin:0}
 li a.active{color:#000}
 
@@ -119,11 +119,11 @@ ul.nice-menu-right ul ul {
 }
 
 ul.nice-menu-right li.menuparent, ul.nice-menu-right li li.menuparent {
-    background: #eee url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
+    background: #eee url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
 }
 
 ul.nice-menu-right li.menuparent:hover, ul.nice-menu-right li li.menuparent:hover {
-    background: #ccc url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
+    background: #ccc url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
 }
 
 ul.nice-menu-left li ul {
@@ -139,11 +139,11 @@ ul.nice-menu-left li ul li ul {
 }
 
 ul.nice-menu-left li.menuparent, ul.nice-menu-left li li.menuparent {
-    background: #eee url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-left.png) left center no-repeat
+    background: #eee url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-left.png) left center no-repeat
 }
 
 ul.nice-menu-left li.menuparent:hover, ul.nice-menu-left li li.menuparent:hover {
-    background: #ccc url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-left.png) left center no-repeat
+    background: #ccc url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-left.png) left center no-repeat
 }
 
 ul.nice-menu-left a, ul.nice-menu-left ul a {
@@ -181,19 +181,19 @@ ul.nice-menu-down .menuparent a {
 }
 
 ul.nice-menu-down li.menuparent {
-    background: #eee url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-down.png) right center no-repeat
+    background: #eee url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-down.png) right center no-repeat
 }
 
 ul.nice-menu-down li.menuparent:hover {
-    background: #ccc url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-down.png) right center no-repeat
+    background: #ccc url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-down.png) right center no-repeat
 }
 
 ul.nice-menu-down li li.menuparent {
-    background: #eee url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
+    background: #eee url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
 }
 
 ul.nice-menu-down li li.menuparent:hover {
-    background: #ccc url(https://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
+    background: #ccc url(http://mol.org/sites/all/modules/contrib/nice_menus/images/arrow-right.png) right center no-repeat
 }
 
 ul.nice-menu li {
@@ -220,7 +220,7 @@ footer {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
-    *behavior: url("https://mol.org/sites/all/themes/beep_edition/htc/boxsizing.htc");
+    *behavior: url("http://mol.org/sites/all/themes/beep_edition/htc/boxsizing.htc");
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -293,7 +293,7 @@ footer a:link {
         -ms-box-sizing: border-box;
         box-sizing: border-box;
         word-wrap: break-word;
-        *behavior: url("https://mol.org/sites/all/themes/beep_edition/htc/boxsizing.htc");
+        *behavior: url("http://mol.org/sites/all/themes/beep_edition/htc/boxsizing.htc");
         _display: inline;
         _overflow: hidden;
         _overflow-y: visible
@@ -459,7 +459,7 @@ footer .footer-icons .icon-facebook {
 
 footer {
     color: #fff;
-    background: #062d66 url(https://mol.org/sites/all/themes/mol_beep_edition/images/footer_background.png) no-repeat left bottom;
+    background: #062d66 url(http://mol.org/sites/all/themes/mol_beep_edition/images/footer_background.png) no-repeat left bottom;
     border-top: 0;
     padding: 0 !important;
     margin-bottom: 0

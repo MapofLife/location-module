@@ -6,48 +6,94 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .location-container {
+  position:relative;
   flex: 1 1 auto;
   display: -webkit-flex;
   display: flex;
+  align-items: stretch  ;
+}
+.location-container .stale {
+  background-color: orange;
+}
+
+.location-container .old {
+ opacity: 0.6;
 }
 
 .location-container .angular-leaflet-map {
-  flex: 1;
+  flex: 5;
 }
 
 .location-container .mol-location-map {
   display: -webkit-flex;
   display: flex;
-  flex: 1 1;
+  flex: 2 1;
+  border-right: 2pt solid gray;
+}
+
+.location-container .left-sidebar {
+  display: -webkit-flex;
+  position: relative;
+  display: flex;
+  max-width: 320px;
+  min-width: 320px;
+  flex: 1 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: 2pt solid gray;
+}
+.location-container .right-sidebar {
+  display: -webkit-flex;
+  position:relative;
+  display: flex;
+  overflow-y: scroll;
+  border-right: 2pt solid gray;
+}
+.location-container .region-filters {
+  flex: 1;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color:white;
+  font-size: 10pt;
+  padding: 5px;
+
+  width: 310px;
+
 }
 
 .location-container .drawer  {
-  border-left: 2pt solid gray;
+
   display: -webkit-flex;
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  min-width: 300px;
+  max-height: 70vh;
+
+  /*max-width: 500px;*/
 }
 
 .location-container .drawer .column {
   min-height: -webkit-min-content;
   flex: 0 0 auto;
   flex-direction: row;
-  min-width: 300px;
-  max-width: 500px;
+  width: 300px;
   padding: 15px;
+  max-height: 100vh;
+
 }
 
-.location-container .drawer .row {
-  min-height: -webkit-min-content;
-  flex: 0 0 auto;
-  flex-direction: column;
-  min-width: 300px;
-  max-width: 500px;
-  padding: 15px;
+.location-container .row {
+
+  padding: 10px;
 }
 
 .location-container .drawer .container {
@@ -60,15 +106,93 @@
 }
 
 .location-container .panel-body-table  {
-  overflow-y: scroll;
-  max-height: 70vh;
+
 }
 .location-container .desc  {
-  max-height: 460px;
-  overflow-y: scroll;
+
 }
 .location-container mol-loading-indicator {
   position: absolute;
   top: 5px;
   left: 50%;
+  z-index: 100;
 }
+
+.location-container .btn {
+
+  border: 0.75pt solid grey !important;
+}
+
+
+
+.location-container .region-thumbs {
+  display: flex;
+  overflow:hidden;
+
+  border-radius: 5px;
+  border: 1.25pt solid gray;
+}
+
+.location-container .region-thumbs div{
+  height: 25px;
+  flex: 1 1 auto
+}
+.location-container .flex-row {
+  display: flex;
+  padding: 1px 5px 1px 5px;
+}
+.location-container input {
+  padding: 5px;
+}
+.location-container .flex-col-1 {
+  flex: 1;
+  padding:2px;
+  margin: auto;
+  white-space: nowrap;
+}
+.location-container .flex-col-2 {
+  flex: 2;
+  margin: auto;
+  padding:2px;
+}
+.location-container .flex-col-3 {
+  margin: auto;
+  padding:2px;
+}
+.location-container .flex-col-4 {
+  margin: auto;
+  padding:2px;
+}
+.location-container .slider {
+  width: 110px;
+}
+.location-container .slider-label {
+  font-size: 8pt;
+}
+.location-container .tvz {min-width:120px; max0width:120px;display: flex;}
+.location-container .tvz .btn {flex: 1 1 auto;padding: 4px 6px;}
+
+.location-container .tvz label { color:black; opacity: 0.3;}
+.location-container .tvz .active {opacity:1 !important;}
+.location-container .tvz .hover {opacity:1 !important;}
+
+.location-container .tvz1 {background-color:#FFFFFF;}
+.location-container .tvz2 {background-color:#00B1D7;}
+.location-container .tvz3 {background-color:#4D35A1;}
+.location-container .tvz4 {background-color:#00AF4A;}
+.location-container .tvz5 {background-color:#00823E;}
+.location-container .tvz6 {background-color:#FDDE16;}
+.location-container .tvz7 {background-color:#FF8A11;}
+
+.location-container .treeline div {border: 0.5pt solid black !important;}
+.location-container .treeline label {border: 0.5pt solid black; color:black; opacity: 0.3;}
+.location-container .treeline .active {opacity:1 !important;}
+
+.location-container .treeline .above {background-color:#e0dbbc;}
+.location-container .treeline .below {background-color:#5f9b41;}
+
+.location-container .ruggedness label { border: 0.5pt solid black; color:white; opacity: 0.3;}
+.location-container .ruggedness .active {opacity:1 !important;}
+
+.location-container .ruggedness .high {background-color:#444444;}
+.location-container .ruggedness .low {color: black;background-color:#eeeeee;}

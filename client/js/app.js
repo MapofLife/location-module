@@ -25,7 +25,7 @@ angular.module('mol', [
   'ui.router',
   //'ui.checkbox',
   'imageHelpers',
-  'leaflet-directive',
+  'ui-leaflet',
   'angularResizable',
   'ui-rangeSlider',
   'angular-loading-bar',
@@ -50,13 +50,13 @@ angular.module('mol', [
     .state(
       'location',
       {
-        templateUrl: 'app/views/location/main.html',
+        templateUrl: '/location/assets/views/location/main.html',
         controller: 'molRegionModelCtrl',
-        url: '/location',
+        url: '/location/',
 
       }
-    )
-    .state(
+    );
+    /*.state(
       'location.latlng',
       {
         templateUrl: 'app/views/location/main.html',
@@ -69,7 +69,7 @@ angular.module('mol', [
         templateUrl: 'app/views/location/main.html',
         url: '/{placename}/:taxa'
       }
-    );
+    );*/
     //Gets rid of the # in the querystring. Wont work on IE
     $locationProvider.html5Mode(true);
 });

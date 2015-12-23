@@ -94,7 +94,7 @@ module.exports = function(grunt) {
             "client/css/mol-basic.css",
             "client/css/mol-theme.css",
             "client/css/goog.css",
-            "client/views/**/*.css"
+            //"client/views/**/*.css"
 
           ]
         }

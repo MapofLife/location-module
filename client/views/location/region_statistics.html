@@ -1,0 +1,35 @@
+<div class='well' >
+  <!--<i ng-show="model.map_constraints.regions.length" style="float:right" ng-click="resetMap()" class="fa fa-close clickable"></i>-->
+  <button
+    ng-hide="model.statistics.area || model.statistics.calculating"
+    ng-click="updateStats()"
+    popover-placement="right"
+    popover-trigger="mouseenter"
+    popover-append-to-body="true"
+    uib-popover="
+      Calculates topographic statistics for the selected area. When constrained
+      to specific mountain regions, calculations are performed using 1km² pixels.
+      Global calculations are performed using 10km² pixels."
+    class="btn btn-default">
+    Calculate statistics</button>
+  <div ng-class="{old : model.stale}">
+  <div ng-show="model.statistics.area">
+    <b>Area:</b> {{model.statistics.area/1000000 | number:0 | km2}}
+  </div>
+  <div ng-show="model.statistics.tvz_min && model.statistics.tvz_max">
+    <b>Thermal belts:</b> {{model.statistics.tvz_min | number:0}} - {{model.statistics.tvz_max | number:0}}
+  </div>
+  <div ng-show="model.statistics.slope_min && model.statistics.slope_max">
+    <b>Slope:</b> {{model.statistics.slope_min | number:0}}&deg; - {{model.statistics.slope_max | number:0}}&deg;
+  </div>
+  <div ng-show="model.statistics.ruggedness_min && model.statistics.ruggedness_max">
+    <b>Ruggedness:</b> {{model.statistics.ruggedness_min | number:0}} - {{model.statistics.ruggedness_max | number:0}}
+  </div>
+  <div ng-show="model.statistics.elevation_min && model.statistics.elevation_max">
+    <b>Elevation:</b> {{model.statistics.elevation_min | number:0}}m - {{model.statistics.elevation_max | number:0}}m
+  </div>
+</div>
+  <div ng-show="model.statistics.calculating">
+    Calculating statistics... <i style="float:right" class="fa fa-refresh fa-spin"></i>
+  </div>
+</div>

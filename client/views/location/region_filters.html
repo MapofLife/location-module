@@ -1,0 +1,215 @@
+<div class="flex-row">
+  <div class="flex-col-4 text-left">
+    <button
+      ng-click="applyConstraints()"
+      ng-class="{stale: model.stale}" class="btn btn-default">
+      Apply selections</button>
+  </div>
+  <div popover-placement="bottom"
+  popover-trigger="mouseenter"
+  popover-append-to-body="true"
+   uib-popover="{{(model.constraints.applied.regions.length==0)?'First select a region by clicking on the map and then \'Apply selections\'':(model.constraints.applied.regions.length>1)?'Downloads are currently only supported for a single region.':''}}"
+   class="flex-col-4 text-right">
+      <button ng-disabled="model.constraints.applied.regions.length!=1" ng-click="downloadImage()" class="btn btn-default">
+        Download map
+      </button>
+  </div>
+</div>
+<hr>
+<div class="flex-row">
+  <div class="flex-col-4">
+    <label
+      uib-popover="Switch to global view"
+      popover-placement="right"
+      popover-trigger="mouseenter"
+      popover-append-to-body="true"
+      class="flex-col-1 clickable text-left">
+     <input type="radio"
+        ng-change="checkPalette()"
+        name="global" value="global"
+        ng-model="model.constraints.region.type">
+      All land
+    </label>
+  </div>
+    <div class="flex-col-1  text-right">
+    <label
+      uib-popover="Limit to specific mountain ranges"
+      popover-placement="right"
+      popover-trigger="mouseenter"
+      popover-append-to-body="true"
+      class="flex-col-1 clickable">
+     <input type="radio"
+      name="global" selected value="mountain_region" selected ng-model="model.constraints.region.type">
+      Mountain ranges
+    </label>
+  </div>
+</div>
+<div ng-hide="model.constraints.region.type=='global'||model.constraints.selected.regions.length==0" class="flex-row" ng-repeat="region in model.constraints.selected.regions">
+   <div class="flex-col-4">{{region.name}}</div>
+    <div class="flex-col-1 text-right">
+      <i ng-click="removeSelectedRegion(region)" class="fa fa-close clickable"></i>
+    </div>
+</div>
+<hr>
+<div class="flex-row">
+  <label
+    class="flex-col-1 clickable text-left popanchor"
+    popover-placement="right"
+    popover-trigger="mouseenter"
+    popover-append-to-body="true"
+    uib-popover="A delineation of 960 major mountain regions worldwide">
+    <input type="radio"
+       name="palette" value="region"
+       ng-model="model.constraints.palette">
+       Mountain ranges
+    </label>
+    <div class="flex-col-1 text-right">
+      <div
+        class="region-thumbs"
+        ng-include="'/location/assets/views/location/region_thumbs.html'"></div>
+    </div>
+</div>
+<div class="flex-row">
+  <label
+    class="flex-col-1 clickable text-left popanchor"
+    popover-placement="right"
+    popover-trigger="mouseenter"
+    popover-append-to-body="true"
+    uib-popover="Dominant life zone inside ca. 25km²">
+    <input type="radio"
+     name="" value="tvz" ng-model="model.constraints.palette">
+     Thermal belt
+  </label>
+  <div class="flex-col-1 text-right">
+    <div class="tvz btn-group">
+        <label class="btn tvz1"
+          ng-model="model.constraints.selected.tvz[0]"
+          uib-popover="Nival"
+          popover-trigger="mouseenter"
+          popover-append-to-body="true"
+          popover-placement="left"
+          btn-checkbox-false="" btn-checkbox-true="1"
+          uib-btn-checkbox>1</label>
+          <label class="btn tvz2"
+          uib-popover="Upper alpine"
+          popover-trigger="mouseenter"
+          popover-append-to-body="true"
+          popover-placement="left"
+          ng-model="model.constraints.selected.tvz[1]"
+          btn-checkbox-false="" btn-checkbox-true="2"
+          uib-btn-checkbox>2</label>
+        <label class="btn tvz3"
+          uib-popover="Lower alpine"
+          popover-placement="left"
+          popover-trigger="mouseenter"
+          popover-append-to-body="true"
+          ng-model="model.constraints.selected.tvz[2]"
+          btn-checkbox-false="" btn-checkbox-true="3"
+          uib-btn-checkbox>3</label>
+        <label class="btn tvz4"
+          uib-popover="Upper montane"
+          popover-placement="left"
+          popover-trigger="mouseenter"
+          popover-append-to-body="true"
+          ng-model="model.constraints.selected.tvz[3]"
+          btn-checkbox-false="" btn-checkbox-true="4"
+          uib-btn-checkbox>4</label>
+        <label class="btn tvz5"
+          uib-popover="Lower montane"
+          popover-placement="left"
+          popover-trigger="mouseenter"
+          popover-append-to-body="true"
+          ng-model="model.constraints.selected.tvz[4]"
+          btn-checkbox-false="" btn-checkbox-true="5"
+          uib-btn-checkbox>5</label>
+        <label class="btn tvz6"
+          uib-popover="Warm, freezing"
+          popover-placement="left"
+          popover-trigger="mouseenter"
+          popover-append-to-body="true"
+          ng-model="model.constraints.selected.tvz[5]"
+          btn-checkbox-false="" btn-checkbox-true="6"
+          uib-btn-checkbox>6</label>
+        <label class="btn tvz7"
+          uib-popover="Warm, no freezing"
+          popover-placement="left"
+          popover-trigger="mouseenter"
+          popover-append-to-body="true"
+          ng-model="model.constraints.selected.tvz[6]"
+          btn-checkbox-false="" btn-checkbox-true="7"
+          btn-checkbox-false=""
+          uib-btn-checkbox>7</label>
+    </div>
+  </div>
+</div>
+<div class="flex-row">
+  <label
+    class="flex-col-1 clickable popanchor"
+    popover-placement="right"
+    popover-trigger="mouseenter"
+    popover-append-to-body="true"
+    uib-popover="Based on 16 pixels (of 250m size) inside 1km²">
+    <input type="radio"
+     ng-model="model.constraints.palette"
+     name="palette" value="slope">
+     Min. Slope
+  </label>
+  <div class="flex-col-1 slider-label text-right">
+    {{model.constraints.selected.slope[0] | number:0}}&deg;:{{model.constraints.selected.slope[1] | number:0}}&deg;
+  </div>
+  <div class="flex-col-1 text-right">
+    <div range-slider show-values="false"
+      step="1" min="0" max="70"
+      prevent-equal-min-max
+      model-min="model.constraints.selected.slope[0]"
+      model-max="model.constraints.selected.slope[1]"></div>
+  </div>
+</div>
+<div class="flex-row">
+    <label
+    class="flex-col-1 clickable text-left popanchor"
+    popover-placement="right"
+    popover-trigger="mouseenter"
+    popover-append-to-body="true"
+    uib-popover="Based on 16 pixels (of 250m size) inside 1km². Ruggedness is the average elevation difference of pixels with each of their eight surrounding pixels">
+    <input type="radio"
+     name="palette" value="ruggedness" ng-model="model.constraints.palette">
+     Min. Ruggedness</label>
+  <div class="flex-col-1 slider-label text-right">
+    {{model.constraints.selected.ruggedness[0] | number:0}}m:{{model.constraints.selected.ruggedness[1] | number:0}}m
+  </div>
+  <div class="flex-col-1 text-right">
+    <div range-slider show-values="false"
+      step="1" min="0" max="2800"
+      prevent-equal-min-max
+      model-min="model.constraints.selected.scaled_ruggedness[0]"
+      model-max="model.constraints.selected.scaled_ruggedness[1]"></div>
+  </div>
+</div>
+<div class="flex-row">
+  <label
+    class="flex-col-1 clickable text-left popanchor"
+    popover-placement="right"
+    popover-trigger="mouseenter"
+    popover-append-to-body="true"
+    uib-popover="Based on 16 pixels (of 250m size) inside 1km²">
+    <input type="radio"
+    name="palette" value="elevation" ng-model="model.constraints.palette">
+    Median Elevation
+  </label>
+  <div class="flex-col-1 slider-label text-right">
+    {{model.constraints.selected.elevation[0] | number:0}}:{{model.constraints.selected.elevation[1] | number:0}}m
+  </div>
+  <div class="flex-col-1 text-right">
+    <div range-slider show-values="false"
+        step="100" min="0" max="8500"
+        prevent-equal-min-max
+        model-min="model.constraints.selected.elevation[0]"
+        model-max="model.constraints.selected.elevation[1]"></div>
+  </div>
+</div>
+
+<div class="region-statistics" ng-include
+      src="'/location/assets/views/location/region_statistics.html'">
+</div>
+{{model.minmax}}
