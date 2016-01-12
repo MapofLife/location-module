@@ -2,33 +2,17 @@
 <div ng-include src="'/location/assets/views/location/nav.html'"></div>
 <!--Species info view -->
 <div id="location-container" class="location-container">
-  <mol-loading-indicator
-    message="model.loadingMessage"
-    style="float: center"></mol-loading-indicator>
-  <div ng-hide="isCollapsed" class="left-sidebar">
-    <div class="region-filters" ng-include
-          src="'/location/assets/views/location/region_filters.html'"></div>
+  <div mol-location-map class="mol-location-map"
+    location="location"></div>
+  <div resizable
+    r-flex="true"
+    r-directions="['left']"
+    class="drawer"
+    ng-show="location.lat">
+    <mol-loading-indicator
+      style="float: center"></mol-loading-indicator>
+    <mol-taxa-counts class="column" location="location" taxon="taxon"></mol-taxa-counts>
+    <mol-species-list class="column" ng-show="taxon" taxon="taxon" species="species"></mol-species-list>
+    <mol-species-detail class="column" ng-show="species" species="species"></mol-species-detail>
   </div>
-  <mol-location-map
-    class="mol-location-map"
-    constraints="model.constraints"
-    palettes="palettes"
-    ></mol-location-map>
-
-  <!--<div ng-show="false" class="drawer">
-      <mol-taxa-counts class="column"
-          taxa="model.taxa"
-          filter-by="model.map_constraints"
-          taxon="model.taxon"></mol-taxa-counts>
-      <mol-species-list  class="column"
-          taxon="model.taxon"
-          filter-by="model.map_constraints"
-          species="model.species"></mol-species-list>
-      <mol-species-detail  class="column"
-          filter-by="model.map_constraints"
-          species="model.species"></mol-species-detail>-->
-  </div>
-</div>
-<div
-  class="hidden-xs"
-  ng-include="'/location/assets/partials/common/thin-footer.html'"></div>
+</div><div class="hidden-xs" ng-include="'/location/assets/partials/common/thin-footer.html'"></div>

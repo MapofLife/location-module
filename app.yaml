@@ -1,6 +1,6 @@
 application: map-of-life
 module: location
-version: gmba
+version: production
 runtime: python27
 threadsafe: true
 api_version: 1
@@ -33,26 +33,22 @@ handlers:
 
 # MOL REST APIs
 
-- url: /location/api/mountain_region/.*
-  script: server.handlers.mountain_region.application
-
 - url: /location/assets/
   static_dir: client
-
 
 # Boots the angular application
 
 - url: /location/.*
-  script: server.handlers.base_handler.application
+  script: app.application
 
 - url: /location
-  script: server.handlers.base_handler.application
+  script: app.application
 
-- url: /species/.*
-  script: server.handlers.base_handler.application
+- url: /.*
+  script: app.application
 
-- url: /species
-  script: server.handlers.base_handler.application
+- url: /
+  script: app.application
 
 
 libraries:

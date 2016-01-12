@@ -1,7 +1,8 @@
 //'use strict';
 
+angular.module('mol.controllers',[]);
+
 angular.module('mol', [
-  //mol components
   'mol.filters',
   'mol.services',
   'mol.auth',
@@ -10,66 +11,76 @@ angular.module('mol', [
   'mol.species-list',
   'mol.species-wiki',
   'mol.species-detail',
-  //'mol.consensus-map',
-  //'mol.point-filters',
-  'mol.species-list-service',
+  'mol.consensus-map',
+  'mol.point-filters',
   'mol.taxa-counts',
   'mol.location-map',
   'mol.loading-indicator',
-  //'mol.consensus-map',
-  'mol.region-selector',
-  'mol.region-model-ctrl',
-  //3rd party components
+  'mol.consensus-map',
+  'mol.directives',
+  //'mol.controllers',
   'ui.bootstrap',
   'ui.select',
   'ui.router',
-  //'ui.checkbox',
+  'ui.checkbox',
   'imageHelpers',
-  'ui-leaflet',
+  'leaflet-directive',
   'angularResizable',
+  //'nvd3',
   'ui-rangeSlider',
   'angular-loading-bar',
+  'pageslide-directive',
   'percentage',
   'km2',
-  //'ngSanitize',
+  'ngSanitize',
   'ngCookies'
 ])
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
     cfpLoadingBarProvider.includeBar = false;
+    //cfpLoadingBarProvider.includeBar = false;
     cfpLoadingBarProvider.latencyThreshold = 500;
   }])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+
   //send cookies
   $httpProvider.defaults.withCredentials = true;
 
-  //configure routes
   $urlRouterProvider.otherwise("/location");
 
   $stateProvider
+  .state(
+    'privacy', //this view contains the bones of the Species Info pages (name, pic, & search bar)
+    {
+      url: '/about/privacy_policy',
+      templateUrl: '/location/assets/partials/privacy_policy.html'
+    }
+  )
     .state(
       'location',
       {
         templateUrl: '/location/assets/views/location/main.html',
-        controller: 'molRegionModelCtrl',
-        url: '/location/',
+        url: '/location',
 
       }
-    );
-    /*.state(
+    )
+    .state(
       'location.latlng',
       {
-        templateUrl: 'app/views/location/main.html',
+        templateUrl: '/location/assets/views/location/main.html',
         url: '/{lat}/{lng}/:taxa'
       }
     )
     .state(
       'location.place',
       {
-        templateUrl: 'app/views/location/main.html',
+        templateUrl: '/location/assets/views/location/main.html',
         url: '/{placename}/:taxa'
       }
-    );*/
+    );
+
     //Gets rid of the # in the querystring. Wont work on IE
     $locationProvider.html5Mode(true);
+
+
 });

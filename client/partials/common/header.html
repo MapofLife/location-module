@@ -2,14 +2,12 @@
     <figure class="logo">
         <a href="http://www.mol.org">
             <img src="/location/assets/img/logo.png" alt="Map of Life" /></a>
-        <a class="gmbalogo" href="http://www.mountainbiodiversity.org/">
-            <img src="http://www.mountainbiodiversity.org/img/gmba_logo.jpg" alt="GMBA" /></a>
     </figure>
     <mol-auth class="mol-auth" user="user"></mol-auth>
     <nav class="main_navigation hidden-xxs">
         <ul class="menu">
             <li class="tab">
-                <a ng-href="http://species.mol.org/species/{{species.scientificname}}">
+                <a ng-href="http://species.mol.org/species/{{species.scientificname.replace(' ','_')}}">
                   <i class="fa fa-info"></i>Species</a>
             </li>
             <li class="tab">

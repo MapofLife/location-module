@@ -1,8 +1,7 @@
 html,
 body {
-  
-  margin: 0,auto;
-  overflow: hidden;
+  height: 100%;
+  margin: 0
 }
 
 
@@ -49,15 +48,11 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset {
 	}
 }
 .logo a {
-	display: table-cell;
+	display: block;
 	height:60px;
 }
 .logo img {
 	width: 160px;
-}
-.logo .gmbalogo img {
-    width: 100px;
-    margin-left: 10px;
 }
 @media (min-width: 740px) {
 	nav {
