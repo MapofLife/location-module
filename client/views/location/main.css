@@ -5,12 +5,14 @@
   display: -webkit-flex;
   display: flex;
   min-height: 100vh;
+  -webkit-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
 }
 
 .location-container {
   position:relative;
+  -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
   display: -webkit-flex;
   display: flex;
@@ -25,12 +27,14 @@
 }
 
 .location-container .angular-leaflet-map {
+  -webkit-flex: 5;
   flex: 5;
 }
 
 .location-container .mol-location-map {
   display: -webkit-flex;
   display: flex;
+  -webkit-flex: 2 1;
   flex: 2 1;
   border-right: 2pt solid gray;
 }
@@ -41,6 +45,7 @@
   display: flex;
   max-width: 320px;
   min-width: 320px;
+  -webkit-flex: 1 0 auto;
   flex: 1 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -55,6 +60,7 @@
 }
 .location-container .region-filters {
   flex: 1;
+  -webkit-flex: 1;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -72,6 +78,7 @@
   display: -webkit-flex;
   display: flex;
   flex: 0 1 auto;
+  -webkit-flex: 1 0 auto;
   flex-direction: row;
   overflow-y:scroll;
   overflow-x: hidden;
@@ -84,6 +91,7 @@
 .location-container .drawer .column {
   min-height: -webkit-min-content;
   flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
   flex-direction: row;
   width: 300px;
   padding: 15px;
@@ -127,6 +135,7 @@
 
 .location-container .region-thumbs {
   display: flex;
+  display: -webkit-flex;
   overflow:hidden;
 
   border-radius: 5px;
@@ -135,16 +144,21 @@
 
 .location-container .region-thumbs div{
   height: 25px;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex: 1 1 auto;
   flex: 1 1 auto
 }
 .location-container .flex-row {
   display: flex;
+  display: -webkit-flex;
   padding: 1px 5px 1px 5px;
 }
 .location-container input {
   padding: 5px;
 }
 .location-container .flex-col-1 {
+  -webkit-flex: 1;
   flex: 1;
   padding:2px;
   margin: auto;
@@ -152,6 +166,7 @@
 }
 .location-container .flex-col-2 {
   flex: 2;
+  -webkit-flex: 2;
   margin: auto;
   padding:2px;
 }
@@ -170,7 +185,10 @@
   font-size: 8pt;
 }
 .location-container .tvz {min-width:120px; max0width:120px;display: flex;}
-.location-container .tvz .btn {flex: 1 1 auto;padding: 4px 6px;}
+.location-container .tvz .btn {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  padding: 4px 6px;}
 
 .location-container .tvz label { color:black; opacity: 0.3;}
 .location-container .tvz .active {opacity:1 !important;}

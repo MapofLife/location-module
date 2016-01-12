@@ -44,7 +44,7 @@ angular.module('mol', [
   $httpProvider.defaults.withCredentials = true;
 
   //configure routes
-  $urlRouterProvider.otherwise("/location");
+  $urlRouterProvider.otherwise("/location/");
 
   $stateProvider
     .state(

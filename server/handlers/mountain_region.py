@@ -66,7 +66,7 @@ class MountainRegionHandler(webapp2.RequestHandler):
         tvz = ee.Image("users/map-of-life/environmental/gmba_tvz")
         ruggedness = ee.Image("users/map-of-life/environmental/tri_mi_GMTED2010_md_km1")
         slope = ee.Image("users/map-of-life/environmental/slope_mi_GMTED2010_md_km1")
-        elevation = ee.Image(mol_assets.elevation)
+        elevation = ee.Image("users/map-of-life/environmental/elevation_md_GMTED2010_md_1km")
 
         #canny = ee.Algorithms.CannyEdgeDetector(regions, 0.4, 0).multiply(255);
         #border = canny.distance(ee.Kernel.euclidean(1))
