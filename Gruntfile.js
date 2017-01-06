@@ -71,7 +71,7 @@ module.exports = function(grunt) {
       },
       combine : {
         files: {
-          "client/css/app.min.css": [
+          "client/app.min.css": [
             "client/components/bower/sortable/css/sortable-theme-bootstrap.css",
             "client/components/bower/angular-loading-bar/src/loading-bar.css",
             "client/components/bower/leaflet/dist/leaflet.css",

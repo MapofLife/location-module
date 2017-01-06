@@ -13,6 +13,8 @@ if 'SERVER_SOFTWARE' in os.environ:
 else:
    PROD = True
 
+PROD = True
+
 class BaseHandler(webapp2.RequestHandler):
     def render_template(self, f, template_args):
         path = os.path.join(os.path.dirname(__file__), "../templates/html", f)
@@ -21,9 +23,9 @@ class BaseHandler(webapp2.RequestHandler):
 
 class App(BaseHandler):
     def get(self):
-        self.render_template('index.html',{"prod":PROD,'rand':'01042017'})
+        self.render_template('index.html',{"prod":PROD,'rand':'010620171140'})
     def post(self):
-        self.render_template('index.html',{"prod":PROD,'rand':'01042017'})
+        self.render_template('index.html',{"prod":PROD,'rand':'010620171140'})
 
 application = webapp2.WSGIApplication(
          [
